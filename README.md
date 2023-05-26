@@ -12,9 +12,13 @@ bash setupHostMachine.sh
 
 ## Docker cheatsheet
 
-See [Docker Cheatsheet](./Docker-Cheatsheet.md)
+See my [Docker Cheatsheet](./Docker-Cheatsheet.md)
 
 ## Kubernetes cheatsheet
 
-See [Kubernetes Cheatsheet](./Kubernetes-cheatsheet.md)
+See my [Kubernetes Cheatsheet](./Kubernetes-cheatsheet.md)
 
+
+## Author
+
+Adrian Niculescu
