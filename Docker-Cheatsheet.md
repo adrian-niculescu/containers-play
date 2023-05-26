@@ -29,7 +29,7 @@ all=$(sudo docker container ls -qa) && [ -n "${all}" ] && sudo docker container 
 with check;
 
 ```bash
-all=$(sudo docker container ls -qa) && [ -n "${all}" ] && sudo docker container rm -f $all; docker ps -a
+all=$(sudo docker container ls -qa) && [ -n "${all}" ] && sudo docker container rm -f $all; sudo docker ps -a
 ```
 
 ### Remove all images
@@ -85,9 +85,9 @@ sudo docker image remove <TAG>
 ### Save and load an image
 
 ```bash
-docker image save -o react-app.tar react-app:3
-docker image load -i react-app.tar
-docker images
+sudo docker image save -o react-app.tar react-app:3
+sudo docker image load -i react-app.tar
+sudo docker images
 ```
 
 ### Logs
@@ -131,8 +131,8 @@ sudo docker logs -f -t react1
 Example:
 
 ```bash
-docker volume create app-data
-docker volume inspect app-data
+sudo docker volume create app-data
+sudo docker volume inspect app-data
 ```
 
 Run the React demo:
@@ -155,16 +155,16 @@ Example
 ```bash
 cd react-app
 sudo docker build -t react-app .
-docker run -d -v app-data:/app/data --name c2 react-app
+sudo docker run -d -v app-data:/app/data --name c2 react-app
 ```
 
 ```bash
 echo hello > log.txt
-docker cp log.txt cp:/app/log.txt
+sudo docker cp log.txt cp:/app/log.txt
 ```
 
 ```bash
-docker cp c2:/app/log.txt .
+sudo docker cp c2:/app/log.txt .
 ```
 
 ### Avoid rebuild for dev changes
@@ -172,5 +172,5 @@ docker cp c2:/app/log.txt .
 Mount the current working directory (given by `pwd`), assuming that's where you have your code, in the container.
 
 ```bash
-docker run -d -p 5001:3000 --name c4 -v $(pwd):/app react-app
+sudo docker run -d -p 5001:3000 --name c4 -v $(pwd):/app react-app
 ```
